@@ -1,0 +1,111 @@
+import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
+import { Document } from "mongoose";
+
+// About Schema
+export type AboutDocument = About & Document;
+
+@Schema()
+export class About {
+    @Prop({ required: true })
+    title: string;
+}
+
+export const AboutSchema = SchemaFactory.createForClass(About);
+
+// Education Schema
+export type EducationDocument = Education & Document;
+
+@Schema()
+export class Education {
+    @Prop({ required: true })
+    school: string;
+    @Prop({ required: true })
+    year: string;
+    @Prop({ required: true })
+    course: string;
+}
+
+export const EducationSchema = SchemaFactory.createForClass(Education);
+
+// Experience Schema
+export type ExperienceDocument = Experience & Document;
+
+@Schema()
+export class Experience {
+    @Prop({ required: true })
+    role: string;
+    @Prop({ required: true })
+    year: string;
+    @Prop({ required: true })
+    description: string;
+}
+
+export const ExperienceSchema = SchemaFactory.createForClass(Experience);
+
+// Project Schema
+export type ProjectDocument = Project & Document;
+
+@Schema()
+export class Project {
+    @Prop({ required: true })
+    title: string;
+
+    @Prop({ required: true })
+    description: string;
+
+    @Prop({ required: true })
+    techStack: string[];
+
+    @Prop({ required: true })
+    keyFeatures: string[];
+    
+    @Prop({ required: true })
+    link: string;
+
+    @Prop({ required: true })
+    gallery: {
+        imageUrl: string[];
+    };
+}
+
+// Tech Skills Schema
+export type TechSkillsDocument = TechSkills & Document;
+
+@Schema()
+export class TechSkills {
+@Prop({ type: [String] })
+  overviewLanguages: string[];
+
+  @Prop({ type: [String] })
+  webDevelopment: string[];
+
+  @Prop({ type: [String] })
+  backendDevelopment: string[];
+
+  @Prop({ type: [String] })
+  mobileDevelopment: string[];
+
+  @Prop({ type: [String] })
+  deviceProgramming: string[];
+
+  @Prop({ type: [String] })
+  tools: string[];
+
+  @Prop({ type: [String] })
+  database: string[];
+}
+
+export const TechSkillsSchema = SchemaFactory.createForClass(TechSkills);
+
+// Achievements Schema
+export type AchievementsDocument = Achievements & Document;
+
+@Schema()
+export class Achievements {
+    @Prop({ required: true })
+    title: string;
+    @Prop({ required: true })
+    year: string;
+}
+
+export const AchievementsSchema = SchemaFactory.createForClass(Achievements);

@@ -53,16 +53,16 @@ export class Project {
     @Prop({ required: true })
     description: string;
 
-    @Prop({ required: true })
+    @Prop({ type: [String] })
     techStack: string[];
 
-    @Prop({ required: true })
+    @Prop({ type: [String] })
     keyFeatures: string[];
     
     @Prop({ required: true })
     link: string;
 
-    @Prop({ required: true })
+    @Prop({ type: [String] })
     gallery: {
         imageUrl: string[];
     };

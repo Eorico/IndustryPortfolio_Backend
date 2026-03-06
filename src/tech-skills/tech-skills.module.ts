@@ -11,6 +11,7 @@ import { TechSkills, TechSkillsSchema } from 'src/schemas/schemas';
       ])
     ],
   controllers: [TechSkillsController],
-  providers: [TechSkillsService]
+  providers: [TechSkillsService],
+  exports: [TechSkillsService],
 })
 export class TechSkillsModule {}

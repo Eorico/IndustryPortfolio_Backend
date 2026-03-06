@@ -8,6 +8,7 @@ import { TechSkillsModule } from './tech-skills/tech-skills.module';
 import { AchievementsModule } from './achievements/achievements.module';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
+import { ProjectsModule } from './projects/projects.module';
 
 @Module({
   imports: [
@@ -15,7 +16,8 @@ import { MongooseModule } from '@nestjs/mongoose';
     MongooseModule.forRoot(process.env.MONGO_URI as string),
     AboutModule, EducationModule, 
     ExperienceModule, TechSkillsModule, 
-    AchievementsModule],
+    AchievementsModule, ProjectsModule
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

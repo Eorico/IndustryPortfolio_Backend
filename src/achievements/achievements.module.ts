@@ -11,6 +11,7 @@ import { Achievements, AchievementsSchema } from 'src/schemas/schemas';
       ])
     ],
   controllers: [AchievementsController],
-  providers: [AchievementsService]
+  providers: [AchievementsService],
+  exports: [AchievementsService]
 })
 export class AchievementsModule {}

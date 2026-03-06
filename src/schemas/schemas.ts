@@ -8,6 +8,21 @@ export type AboutDocument = About & Document;
 export class About {
     @Prop({ required: true })
     title: string;
+
+    @Prop({ required: true })
+    role: string;
+    
+    @Prop({ required: true })
+    address: string;
+
+    @Prop({ required: true })
+    email: string;
+    
+    @Prop({ required: true })
+    phoneNumber: string;
+
+    @Prop({ required: true })
+    description: string;
 }
 
 export const AboutSchema = SchemaFactory.createForClass(About);
@@ -67,6 +82,8 @@ export class Project {
         imageUrl: string[];
     };
 }
+
+export const ProjectSchema = SchemaFactory.createForClass(Project);
 
 // Tech Skills Schema
 export type TechSkillsDocument = TechSkills & Document;

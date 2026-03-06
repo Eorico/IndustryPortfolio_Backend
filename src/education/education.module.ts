@@ -11,6 +11,7 @@ import { Education, EducationSchema } from 'src/schemas/schemas';
       ])
     ],
   controllers: [EducationController],
-  providers: [EducationService]
+  providers: [EducationService],
+  exports: [EducationService]
 })
 export class EducationModule {}

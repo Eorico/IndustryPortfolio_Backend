@@ -11,6 +11,9 @@ async function bootstrap() {
     credentials: true,
   })
 
+  // global prefix
+  app.setGlobalPrefix('portfolio');
+
   const port = process.env.PORT ?? 3000;
   await app.listen(port);
 

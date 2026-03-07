@@ -90,26 +90,26 @@ export type TechSkillsDocument = TechSkills & Document;
 
 @Schema()
 export class TechSkills {
-@Prop({ type: [String] })
-  overviewLanguages: string[];
+    @Prop({ type: [String] })
+    overviewLanguages: string[];
 
-  @Prop({ type: [String] })
-  webDevelopment: string[];
+    @Prop({ type: [String] })
+    webDevelopment: string[];
 
-  @Prop({ type: [String] })
-  backendDevelopment: string[];
+    @Prop({ type: [String] })
+    backendDevelopment: string[];
 
-  @Prop({ type: [String] })
-  mobileDevelopment: string[];
+    @Prop({ type: [String] })
+    mobileDevelopment: string[];
 
-  @Prop({ type: [String] })
-  deviceProgramming: string[];
+    @Prop({ type: [String] })
+    deviceProgramming: string[];
 
-  @Prop({ type: [String] })
-  tools: string[];
+    @Prop({ type: [String] })
+    tools: string[];
 
-  @Prop({ type: [String] })
-  database: string[];
+    @Prop({ type: [String] })
+    database: string[];
 }
 
 export const TechSkillsSchema = SchemaFactory.createForClass(TechSkills);
@@ -126,3 +126,30 @@ export class Achievements {
 }
 
 export const AchievementsSchema = SchemaFactory.createForClass(Achievements);
+
+// Portfolio Schema for embeding all sections
+export type PortfolioDocument = Portfolio & Document;
+
+@Schema()
+export class Portfolio {
+    @Prop({ type: AboutSchema, required: true })
+    about: About;
+
+    @Prop({ type: [EducationSchema], default: [] })
+    education: Education[];
+
+    @Prop({ type: [ExperienceSchema], default: [] })
+    experience: Experience[];
+
+    @Prop({ type: [ProjectSchema], default: [] })
+    projects: Project[];
+
+    @Prop({ type: [TechSkillsSchema], default: [] })
+    techSkills: TechSkills[];
+
+    @Prop({ type: [AchievementsSchema], default: [] })
+    achievements: Achievements[];
+
+}
+
+export const PortfolioSchema = SchemaFactory.createForClass(Portfolio);

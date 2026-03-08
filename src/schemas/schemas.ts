@@ -69,18 +69,25 @@ export class Project {
     description: string;
 
     @Prop({ type: [String] })
-    techStack: string[];
+    tech: string;
 
     @Prop({ type: [String] })
-    keyFeatures: string[];
+    features: string;
+
+    @Prop({ type: [String] })
+    image: string;
+
+    @Prop({ type: [String] })
+    url: string;
     
     @Prop({ required: true })
     link: string;
 
     @Prop({ type: [String] })
-    gallery: {
-        imageUrl: string[];
-    };
+    gallery: string[];
+
+    @Prop({ type: [String] })
+    gradient: string;
 }
 
 export const ProjectSchema = SchemaFactory.createForClass(Project);
@@ -89,27 +96,33 @@ export const ProjectSchema = SchemaFactory.createForClass(Project);
 export type TechSkillsDocument = TechSkills & Document;
 
 @Schema()
+export class Skills {
+    @Prop({ type: true })
+    name: string
+
+    @Prop({ type: true })
+    color: string
+}
+
+@Schema()
+export class SkillsCategories{
+    @Prop({ type: true })
+    categories: string
+
+    @Prop({ type: true })
+    skills: string[]
+}
+
+@Schema()
 export class TechSkills {
-    @Prop({ type: [String] })
-    overviewLanguages: string[];
+    @Prop({ type: [Skills], default: [] })
+    skills: Skills[]
 
-    @Prop({ type: [String] })
-    webDevelopment: string[];
+    @Prop({ type: [SkillsCategories], default: [] })
+    categories: SkillsCategories[];
 
-    @Prop({ type: [String] })
-    backendDevelopment: string[];
-
-    @Prop({ type: [String] })
-    mobileDevelopment: string[];
-
-    @Prop({ type: [String] })
-    deviceProgramming: string[];
-
-    @Prop({ type: [String] })
-    tools: string[];
-
-    @Prop({ type: [String] })
-    database: string[];
+    @Prop({ type: [String], default: [] })
+    topSkills: string[]
 }
 
 export const TechSkillsSchema = SchemaFactory.createForClass(TechSkills);

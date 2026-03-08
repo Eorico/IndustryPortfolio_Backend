@@ -96,33 +96,33 @@ export const ProjectSchema = SchemaFactory.createForClass(Project);
 export type TechSkillsDocument = TechSkills & Document;
 
 @Schema()
-export class Skills {
-    @Prop({ type: true })
-    name: string
+export class Skill {
+  @Prop({ required: true })
+  name: string; 
 
-    @Prop({ type: true })
-    color: string
+  @Prop({ required: true })
+  color: string; 
 }
 
 @Schema()
-export class SkillsCategories{
-    @Prop({ type: true })
-    categories: string
+export class SkillCategory {
+  @Prop({ required: true })
+  category: string; 
 
-    @Prop({ type: true })
-    skills: string[]
+  @Prop({ type: [String], default: [] })
+  skills: string[]; 
 }
 
 @Schema()
 export class TechSkills {
-    @Prop({ type: [Skills], default: [] })
-    skills: Skills[]
+  @Prop({ type: [Skill], default: [] })
+  skills: Skill[];
 
-    @Prop({ type: [SkillsCategories], default: [] })
-    categories: SkillsCategories[];
+  @Prop({ type: [SkillCategory], default: [] })
+  categories: SkillCategory[];
 
-    @Prop({ type: [String], default: [] })
-    topSkills: string[]
+  @Prop({ type: [String], default: [] })
+  topSkills: string[];
 }
 
 export const TechSkillsSchema = SchemaFactory.createForClass(TechSkills);

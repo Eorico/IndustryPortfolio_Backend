@@ -85,9 +85,7 @@ export class Project {
 
     @Prop({ type: [String] })
     gallery: string[];
-
-    @Prop({ type: [String] })
-    gradient: string;
+ 
 }
 
 export const ProjectSchema = SchemaFactory.createForClass(Project);
@@ -136,6 +134,10 @@ export class Achievements {
     title: string;
     @Prop({ required: true })
     year: string;
+    @Prop({ required: true })
+    icon: string;
+    @Prop({ required: true })
+    image: string;
 }
 
 export const AchievementsSchema = SchemaFactory.createForClass(Achievements);

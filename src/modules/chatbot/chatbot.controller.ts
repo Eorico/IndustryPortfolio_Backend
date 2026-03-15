@@ -9,6 +9,6 @@ export class ChatbotController {
     async ask(@Body("question") question: string) {
         const result = await this.chatbotService.ask(question);
 
-        return { answer: result.toString() };
+        return typeof result === "string" ? result : JSON.stringify(result);
     }
 }

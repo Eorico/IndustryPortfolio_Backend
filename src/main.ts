@@ -6,7 +6,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.enableCors({
-    origin: "http://localhost:8080",
+    origin: "https://industryportfolio-backend.onrender.com",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
   })
@@ -18,7 +18,7 @@ async function bootstrap() {
   await app.listen(port);
 
   Logger.log("Mongo DB Connected");
-  Logger.log(`Server is now Live! at - http://localhost:${port}`);
+  Logger.log(`Server is now Live! at - https://industryportfolio-backend.onrender.com:${port}`);
   
 }
 bootstrap();

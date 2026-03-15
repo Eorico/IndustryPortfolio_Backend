@@ -14,11 +14,9 @@ async function bootstrap() {
   // global prefix
   app.setGlobalPrefix('portfolio');
 
-  const port = process.env.PORT ?? 3000;
-  await app.listen(port);
 
   Logger.log("Mongo DB Connected");
-  Logger.log(`Server is now Live! at - https://industryportfolio-backend.onrender.com:${port}`);
+  Logger.log(`Server is now Live! at - https://industryportfolio-backend.onrender.com`);
   
 }
 bootstrap();

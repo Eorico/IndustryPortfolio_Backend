@@ -3,7 +3,7 @@ import axios from 'axios';
 
 @Injectable()
 export class ChatbotService {
-    private pythonServer = "http://127.0.0.1:8000";
+    private pythonServer = "https://industry-portfolio-ai.onrender.com";
 
     async ask(question: string) {
         const response = await axios.post(

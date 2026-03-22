@@ -23,6 +23,9 @@ export class About {
 
     @Prop({ required: true })
     description: string;
+
+    @Prop({ type: [String] })
+    images: string[]
 }
 
 export const AboutSchema = SchemaFactory.createForClass(About);

@@ -11,9 +11,6 @@ import { ConfigService } from '@nestjs/config';
       useFactory: (config: ConfigService) => {
         const user = config.get<string>("EMAIL_USER");
         const pass = config.get<string>("EMAIL_PASS");
-
-        console.log("Email user:", user);
-        console.log("Email pass", pass);
         
         return {
           transport: {
